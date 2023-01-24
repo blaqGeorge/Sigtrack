@@ -60,7 +60,7 @@ fun StreamTextInputFields(
 }
 
 
-@Composable
+/*@Composable
 fun ConnectivityScreen() {
     val scaffoldState = rememberScaffoldState()
 
@@ -201,4 +201,4 @@ fun ConnectivityScreen() {
     }
 
 
-}
+}*/

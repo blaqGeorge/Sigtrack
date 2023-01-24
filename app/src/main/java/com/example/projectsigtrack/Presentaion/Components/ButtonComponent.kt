@@ -1,15 +1,14 @@
 package com.example.projectsigtrack.Presentaion.Components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -17,11 +16,16 @@ import androidx.compose.ui.unit.sp
 import com.example.projectsigtrack.R
 
 @Composable
- fun buttonComponent() {
+fun ButtonComponent(
+    modifier: Modifier = Modifier,
+    Connect: String ,
+    onClick: (String) -> Unit,
+    textAlign:TextAlign = TextAlign.Center
+) {
     Row(
         horizontalArrangement = Arrangement.Center,
 
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .height(200.dp)
             .padding(50.dp)
@@ -31,7 +35,7 @@ import com.example.projectsigtrack.R
         Button(
             onClick = {
 
-            },
+                onClick.invoke(Connect) },
             shape = RoundedCornerShape(35.dp),
             contentPadding = PaddingValues(
                 start = 50.dp, top = 12.dp, end = 50.dp, bottom = 12.dp
@@ -55,7 +59,7 @@ import com.example.projectsigtrack.R
                     ),
                     color = MaterialTheme.colors.secondary,
                     fontSize = 20.sp,
-                    textAlign = TextAlign.Center
+                    textAlign=textAlign
                 )
 
             }

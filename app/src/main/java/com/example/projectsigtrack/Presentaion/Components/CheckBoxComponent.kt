@@ -1,5 +1,6 @@
 package com.example.projectsigtrack.Presentaion.Components
 
+import android.util.Log
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Checkbox
@@ -13,17 +14,25 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun CheckboxComponent() {
-    var isMarked by remember { mutableStateOf(false) }
+fun CheckboxComponent(
+    modifier: Modifier = Modifier,
+    isMarked: Boolean = false,
+    onCheckChange: (Boolean) -> Unit
+) {
+
     var textFieldStatePass by remember {
         mutableStateOf("")
     }
 
 
-    Row(verticalAlignment = Alignment.CenterVertically) {
+
+    Row(verticalAlignment = Alignment.CenterVertically, modifier = modifier.fillMaxWidth()) {
         Checkbox(
             checked = isMarked,
-            onCheckedChange = { isMarked = it },
+
+            onCheckedChange = {
+                onCheckChange.invoke(it)
+                              },
             colors = CheckboxDefaults.colors(MaterialTheme.colors.primaryVariant),
 
             )
