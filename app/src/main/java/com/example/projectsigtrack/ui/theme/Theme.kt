@@ -10,9 +10,9 @@ private val LightColorPalette = lightColors(
     primary = PrimaryColor,
     onPrimary = PrimaryColor,
 
-    secondary = WhiteColor,
-   // onSecondary = SecondaryColor,
-    primaryVariant= BlackColor,
+    secondary = SecondaryColor,
+  //  onSecondary = SecondaryColor,
+    primaryVariant= PrimaryVariant,
     background = WhiteColor,
    // onBackground = PrimaryColor,
     surface = TertiaryColor,

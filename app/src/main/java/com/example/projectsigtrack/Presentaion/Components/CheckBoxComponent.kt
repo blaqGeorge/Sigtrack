@@ -26,7 +26,7 @@ fun CheckboxComponent(
 
 
 
-    Row(verticalAlignment = Alignment.CenterVertically, modifier = modifier.fillMaxWidth()) {
+    Row(verticalAlignment = Alignment.CenterVertically, modifier = modifier.fillMaxWidth().height(100.dp)) {
         Checkbox(
             checked = isMarked,
 

@@ -10,6 +10,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
@@ -29,32 +30,46 @@ fun StreamTextInputFields(
     Column(
         horizontalAlignment = Alignment.Start,/*second column for name and textbox*/
         verticalArrangement = Arrangement.Top, modifier = modifier
-            .fillMaxWidth()
-            .height(100.dp)
+            .width(250.dp)
+
 
     ) {
-        Text(
+        /*Text(
             text = Name, fontWeight = FontWeight.SemiBold, modifier = Modifier
             /*.padding(1.dp)*/, color = MaterialTheme.colors.primaryVariant
 
 
-        )
+        )*/
 
 
         TextField(
             value = textFieldStream,
+
             label = {
                 Text(
                     field,
                     fontWeight = FontWeight.SemiBold,
                     fontStyle = FontStyle.Italic,
-                    color = Color.Gray
-                )
-            }, onValueChange = textFieldStreamChange,
-            singleLine = true,
-            modifier = Modifier.fillMaxWidth()
+                    color = Color.Gray,
 
-        )
+                    )
+            },
+            onValueChange = textFieldStreamChange,
+            singleLine = true,
+
+            modifier = Modifier
+                .width(230.dp)
+                .clip(RoundedCornerShape(8.dp))
+                .padding(0.dp, 10.dp)
+                .background(Color.White),
+            colors = TextFieldDefaults.textFieldColors(backgroundColor = Color.Transparent),
+
+            )
+
+        /*Text(text = "http:// www.soko.com/Stream.avi",color=Color.DarkGray, fontWeight = FontWeight.SemiBold)
+        Text(text = "rtp:// www.example:1234",color=Color.DarkGray,fontWeight = FontWeight.SemiBold)
+        Text(text = "rtsp:// www.sokoaerial.org:8080/test.sdp",color=Color.DarkGray,fontWeight = FontWeight.SemiBold)
+        Text(text = "http:// www.youtube.com/watch?v=ssd67",color=Color.DarkGray,fontWeight = FontWeight.SemiBold)*/
     }
 
 }
